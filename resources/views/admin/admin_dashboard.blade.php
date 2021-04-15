@@ -612,3 +612,5 @@
   </div>
 <!-- /.content-wrapper -->
 @endsection
+
+<!-- /.admin_dashboard End -->
