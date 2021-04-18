@@ -19,7 +19,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="{{ url('/') }}" class="h2"><b>Admin</b>Panel</a>
+      <a  class="h2"><b>Admin</b>Panel</a>
     </div>
     <div class="card-body">
   @if(Session::has('error_message'))
@@ -30,6 +30,17 @@
         </button>
       </div>
   @endif
+
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
+
       <form action="{{ url('/admin') }}" method="post">@csrf
         <div class="input-group mb-3">
           <input name="email" id="email" type="email" class="form-control" placeholder="Email">
