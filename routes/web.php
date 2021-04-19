@@ -30,6 +30,8 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::get('logout','AdminController@logout');
         //Check Current Password Match Our Database Or Not
         route::post('check-current-pwd','AdminController@chkCurrentPassword');
+        //Update Current Password Submit
+        route::post('update-current-pwd','AdminController@updateCurrentPassword');
     });
 });
 
