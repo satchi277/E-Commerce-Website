@@ -32,14 +32,30 @@
                 <h3 class="card-title">Update Password</h3>
               </div>
               <!-- /.card-header -->
+              @if(Session::has('error_message'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                {{ Session::get('error_message') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              @endif
+              @if(Session::has('success_message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                {{ Session::get('success_message') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              @endif
               <!-- form start -->
-              <form role="form" method="post" action="{{ url('/admin/update-pwd') }}" name="updatePasswordForm" id="updatePasswordForm">@csrf
+              <form role="form" method="post" action="{{ url('/admin/update-current-pwd') }}" name="updatePasswordForm" id="updatePasswordForm">@csrf
                 <div class="card-body">
-                <div class="form-group">
+                  <?php /*<div class="form-group">
                     <label for="exampleInputEmail1">Admin Name</label>
-                    <!-- or, use Auth::guard('admin')->user()->name in value for Show The Value -->
+                     or, use Auth::guard('admin')->user()->name in value for Show The Value 
                     <input type="text" class="form-control" value="{{ $adminDetails->name }}" placeholder="Enter Admin/Subadmin Name" id="admin_name" name="admin_name">
-                  </div>
+                  </div> */ ?>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Admin Email</label>
                     <!-- or, use Auth::guard('admin')->user()->email in value for Show The Value-->
@@ -53,15 +69,15 @@
                   <div class="form-group">
                     <label for="exampleInputPassword1">Current Password</label>
                     <input type="password" class="form-control" name="current_pwd" id="current_pwd" placeholder="Enter Current Password">
-                    <span id="chkCurrentPwd"></span>
+                    <span id="chkCurrentPwd" require=""></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">New Password</label>
-                    <input type="password" class="form-control" name="new_pwd" id="new_pwd" placeholder="Enter New Password">
+                    <input type="password" class="form-control" name="new_pwd" id="new_pwd" placeholder="Enter New Password" require="">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm New Password">
+                    <input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm New Password" require="">
                   </div>
 
                 </div>
