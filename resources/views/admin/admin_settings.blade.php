@@ -33,12 +33,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form role="form" method="post" action="{{ url('/admin/update-pwd') }}" name="updatePasswordForm" id="updatePasswordForm">@csrf
                 <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Admin Name</label>
                     <!-- or, use Auth::guard('admin')->user()->name in value for Show The Value -->
-                    <input type="text" class="form-control" value="{{ $adminDetails->name }}">
+                    <input type="text" class="form-control" value="{{ $adminDetails->name }}" placeholder="Enter Admin/Subadmin Name" id="admin_name" name="admin_name">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Admin Email</label>
@@ -52,15 +52,16 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Current Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Current Password">
+                    <input type="password" class="form-control" name="current_pwd" id="current_pwd" placeholder="Enter Current Password">
+                    <span id="chkCurrentPwd"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">New Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter New Password">
+                    <input type="password" class="form-control" name="new_pwd" id="new_pwd" placeholder="Enter New Password">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm New Password">
+                    <input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm New Password">
                   </div>
 
                 </div>
