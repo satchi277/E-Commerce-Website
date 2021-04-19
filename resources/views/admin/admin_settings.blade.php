@@ -68,16 +68,16 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Current Password</label>
-                    <input type="password" class="form-control" name="current_pwd" id="current_pwd" placeholder="Enter Current Password">
-                    <span id="chkCurrentPwd" require=""></span>
+                    <input type="password" class="form-control" name="current_pwd" id="current_pwd" placeholder="Enter Current Password" required>
+                    <span id="chkCurrentPwd"></span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">New Password</label>
-                    <input type="password" class="form-control" name="new_pwd" id="new_pwd" placeholder="Enter New Password" require="">
+                    <input type="password" class="form-control" name="new_pwd" id="new_pwd" placeholder="Enter New Password" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm New Password" require="">
+                    <input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm New Password" required>
                   </div>
 
                 </div>
